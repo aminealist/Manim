@@ -61,10 +61,8 @@ class movingframe(Scene):
         self.wait(1)
 
         # предположение индукции
-        Let = [MathTex("\\frac{1}{(k+3)(k+4)}+",
-                       " \\frac{1}{((k+1)+3) ((k+1)+4)} + ... + \\frac{1}{(2k+3)(2k+4)}",
-                       "=", "\\frac{k+1}{2(k+2)(k+3)}",
-                       font_size=25).move_to(RIGHT * 0.5)]
+        Let = [MathTex("\\frac{1}{(k+3)(k+4)}+", " \\frac{1}{((k+1)+3) ((k+1)+4)} + ... + \\frac{1}{(2k+3)(2k+4)}", "=",
+                       "\\frac{k+1}{2(k+2)(k+3)}", font_size=25).move_to(RIGHT * 0.5)]
 
         Let.append(Tex("Let S =", color=RED_A, font_size=32).next_to(Let[0], 0.7 * LEFT))
         Let.append(VGroup(Let[0], Let[1]))
@@ -181,20 +179,13 @@ class movingframe(Scene):
         self.clear()
         end1 = VGroup((MathTex("\\frac{1}{(n+3)(n+4)}", "+",
                                "\\frac{1}{((n+1)+3) ((n+1)+4)}", "+", "...", "+",
-                                "\\frac{1}{(2n+3)(2n+4)}", "=", "\\frac{n+1}{2(n+2)(n+3)}",
+                               "\\frac{1}{(2n+3)(2n+4)}", "=", "\\frac{n+1}{2(n+2)(n+3)}",
                                font_size=33)), (Tex("TRUE").move_to(DOWN)))
         self.play(Write(end1))
 
         self.wait(1)
         self.play(FadeOut(end1))
         self.wait(2)
-
-
-
-
-
-
-
 
 # manim n1.py -pql
 # manim -p -ql n1.py movingframe
